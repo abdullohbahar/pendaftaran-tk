@@ -30,7 +30,7 @@ class PendaftaranController extends CI_Controller
     {
         $this->load->library('form_validation');
 
-        $this->form_validation->set_rules('foto', 'Foto', 'required');
+        // $this->form_validation->set_rules('foto', 'Foto', 'required');
         $this->form_validation->set_rules('nama_lengkap', 'Nama Siswa', 'required');
         $this->form_validation->set_rules('tempat_lahir', 'Tempat Lahir', 'required');
         $this->form_validation->set_rules('tanggal_lahir', 'Tanggal Lahir', 'required');
@@ -82,9 +82,6 @@ class PendaftaranController extends CI_Controller
                 $dataSiswa['foto'] = $image['file_name'];
             } else {
                 $error = array('error' => $this->upload->display_errors());
-
-                var_dump($error);
-                die;
                 $dataSiswa['foto'] = '';
             }
 
@@ -101,10 +98,12 @@ class PendaftaranController extends CI_Controller
 
             if ($this->M_Siswa->save_siswa($dataSiswa) && $this->M_Wali->save_wali($dataWali)) {
                 // Data was successfully saved
-                echo 'Data saved successfully';
+                $this->session->set_flashdata('success', 'Data berhasil disimpan.');
+                $this->load->view('pendaftaran/index');
             } else {
                 // Data save failed
-                echo 'Data save failed';
+                $this->session->set_flashdata('failed', 'Data berhasil disimpan.');
+                $this->load->view('pendaftaran/index');
             }
         }
     }

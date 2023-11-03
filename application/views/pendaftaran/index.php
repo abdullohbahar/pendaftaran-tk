@@ -66,6 +66,7 @@
                     <li><a class="nav-link" href="<?= base_url(''); ?>#teacher">Guru</a></li>
                     <li><a class="nav-link" href="<?= base_url(''); ?>">Pendaftaran</a></li>
                     <li><a class="nav-link" href="<?= base_url(''); ?>#contact">Kontak</a></li>
+                    <li><a class="nav-link" href="#">Masuk Sebagai Guru</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle d-none"></i>
             </nav><!-- .navbar -->
@@ -82,6 +83,19 @@
                     <h2>Pendaftaran </h2>
                 </div>
 
+                <div class="row">
+                    <?php if ($this->session->flashdata('success')) { ?>
+                        <div class="alert alert-success">
+                            <a href="#" class="close" data-dismiss="alert">&times;</a>
+                            <strong>Berhasil!</strong> <?php echo $this->session->flashdata('success'); ?>
+                        </div>
+                    <?php } else if ($this->session->flashdata('error')) { ?>
+                        <div class="alert alert-success">
+                            <a href="#" class="close" data-dismiss="alert">&times;</a>
+                            <strong>Gagal!</strong> <?php echo $this->session->flashdata('error'); ?>
+                        </div>
+                    <?php } ?>
+                </div>
                 <div class="row justify-content-center g-4 g-lg-5" data-aos="fade-up" data-aos-delay="200">
 
                     <div class="col-8">

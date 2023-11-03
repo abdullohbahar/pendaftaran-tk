@@ -66,6 +66,7 @@
                     <li><a class="nav-link scrollto" href="#teacher">Guru</a></li>
                     <li><a class="nav-link scrollto" href="#registration">Pendaftaran</a></li>
                     <li><a class="nav-link scrollto" href="#contact">Kontak</a></li>
+                    <li><a class="nav-link" href="#">Masuk Sebagai Guru</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle d-none"></i>
             </nav><!-- .navbar -->
@@ -78,7 +79,7 @@
             <h2>Selamat Datang di <span>TK ABA NGABEAN 1</span></h2>
             <!-- <p>Et voluptate esse accusantium accusamus natus reiciendis quidem voluptates similique aut.</p> -->
             <div class="d-flex">
-                <a href="#about" class="btn-get-started scrollto">Lakukan Pendaftaran Untuk Putra Putri Anda</a>
+                <a href="<?= base_url('pendaftaran'); ?>" class="btn-get-started scrollto">Lakukan Pendaftaran Untuk Putra Putri Anda</a>
                 <!-- <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a> -->
             </div>
         </div>
@@ -203,7 +204,7 @@
 
                 <div class="row g-4 g-lg-5" data-aos="fade-up" data-aos-delay="200">
                     <div class="text-center">
-                        <a href="" class="btn btn-success">Klik Disini Untuk Melakukan Pendaftaran Untuk Putra Putri Anda</a>
+                        <a href="<?= base_url('pendaftaran'); ?>" class="btn btn-success">Klik Disini Untuk Melakukan Pendaftaran Untuk Putra Putri Anda</a>
                         <!-- <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a> -->
                     </div>
                 </div>
