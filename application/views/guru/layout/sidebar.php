@@ -44,7 +44,7 @@
                      </ul>
                  </li>
                  <li class="nav-item">
-                     <a href="#" class="nav-link">
+                     <a href="<?= base_url('data-guru'); ?>" class="nav-link <?= $active == 'data-guru' ? 'active' : ''; ?>">
                          <i class="nav-icon fas fa-users"></i>
                          <p>
                              Data Guru

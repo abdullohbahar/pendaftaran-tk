@@ -31,4 +31,17 @@ class GuruController extends CI_Controller
         $this->load->view('guru/dashboard/index', $data);
         $this->load->view('guru/layout/footer', $data);
     }
+
+    public function dataGuru()
+    {
+        $data = [
+            'active' => 'data-guru'
+        ];
+
+        $this->load->view('guru/layout/header', $data);
+        $this->load->view('guru/layout/navbar', $data);
+        $this->load->view('guru/layout/sidebar', $data);
+        $this->load->view('guru/data-guru/index', $data);
+        $this->load->view('guru/layout/footer', $data);
+    }
 }

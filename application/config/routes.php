@@ -56,3 +56,4 @@ $route['pendaftaran'] = 'PendaftaranController/index';
 $route['simpan-pendaftaran'] = 'PendaftaranController/simpanPendaftaran';
 $route['login-guru'] = 'LoginController/index';
 $route['dashboard'] = 'GuruController/index';
+$route['data-guru'] = 'GuruController/dataGuru';

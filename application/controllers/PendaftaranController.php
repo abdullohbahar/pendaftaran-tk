@@ -30,6 +30,9 @@ class PendaftaranController extends CI_Controller
     {
         $this->load->library('form_validation');
 
+        $yearNow = date('Y');
+        $nextYear = date('Y') + 1;
+
         // $this->form_validation->set_rules('foto', 'Foto', 'required');
         $this->form_validation->set_rules('nama_lengkap', 'Nama Siswa', 'required');
         $this->form_validation->set_rules('tempat_lahir', 'Tempat Lahir', 'required');
@@ -66,6 +69,7 @@ class PendaftaranController extends CI_Controller
                 'jumlah_saudara' => $this->input->post('jumlah_saudara'),
                 'status_anak' => $this->input->post('status_anak'),
                 'alamat' => $this->input->post('alamat'),
+                'tahun_ajaran' => $yearNow . '/' . $nextYear,
             );
 
             $config['upload_path'] = './uploads/';
