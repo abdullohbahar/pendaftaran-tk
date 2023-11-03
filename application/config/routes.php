@@ -55,3 +55,4 @@ $route['translate_uri_dashes'] = FALSE;
 $route['pendaftaran'] = 'PendaftaranController/index';
 $route['simpan-pendaftaran'] = 'PendaftaranController/simpanPendaftaran';
 $route['login-guru'] = 'LoginController/index';
+$route['dashboard'] = 'GuruController/index';
