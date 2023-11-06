@@ -14,4 +14,11 @@ class M_siswa extends CI_Model
         // Check if the insertion was successful
         return $this->db->affected_rows() > 0;
     }
+
+    public function get_last_id()
+    {
+        $this->db->select_max('id');
+        $result = $this->db->get('siswa')->row();
+        return $result->id;
+    }
 }

@@ -60,7 +60,23 @@ class PendaftaranController extends CI_Controller
             $this->load->model('M_Siswa');
             $this->load->model('M_Wali');
 
+            // Dapatkan ID terakhir yang ada di tabel siswa
+            $last_id = $this->M_Siswa->get_last_id();
+
+            // Buat ID baru dengan menambahkan 1 ke ID terakhir
+            $new_id = intval($last_id) + 1;
+
+            // Dapatkan tahun sekarang
+            $yearNow = date('Y');
+
+            // Tahun berikutnya
+            $nextYear = $yearNow + 1;
+
+            // Format ID sesuai dengan kebutuhan
+            $id = sprintf('%02d/%d/%d', $new_id, $yearNow, $nextYear);
+
             $dataSiswa = array(
+                'id' => $id,
                 'nama_lengkap' => $this->input->post('nama_lengkap'),
                 'tempat_lahir' => $this->input->post('tempat_lahir'),
                 'agama' => $this->input->post('agama'),

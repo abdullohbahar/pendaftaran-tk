@@ -57,3 +57,6 @@ $route['simpan-pendaftaran'] = 'PendaftaranController/simpanPendaftaran';
 $route['login-guru'] = 'LoginController/index';
 $route['dashboard'] = 'GuruController/index';
 $route['data-guru'] = 'GuruController/dataGuru';
+$route['tambah-guru'] = 'GuruController/tambahGuru';
+$route['hapus-guru/(:any)'] = 'GuruController/hapusGuru/$1';
+$route['ubah-guru/(:any)'] = 'GuruController/ubahGuru/$1';
