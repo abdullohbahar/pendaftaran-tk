@@ -23,6 +23,13 @@ class GuruController extends CI_Controller
     {
         parent::__construct();
         $this->load->model('M_Guru');
+
+        $this->load->library('session');
+
+        // Cek apakah pengguna sudah masuk
+        if (!$this->session->userdata('logged_in')) {
+            redirect('login'); // Redirect pengguna ke halaman login jika belum masuk
+        }
     }
 
     public function index()

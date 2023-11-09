@@ -22,4 +22,10 @@ class M_Guru extends CI_Model
         $this->db->where('id', $id);
         $this->db->update('guru', $dataGuru);
     }
+
+    public function get_user_by_username($username)
+    {
+        $this->db->where('username', $username);
+        return $this->db->get('guru')->row();
+    }
 }

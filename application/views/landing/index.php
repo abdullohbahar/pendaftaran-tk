@@ -66,7 +66,7 @@
                     <li><a class="nav-link scrollto" href="#teacher">Guru</a></li>
                     <li><a class="nav-link scrollto" href="#registration">Pendaftaran</a></li>
                     <li><a class="nav-link scrollto" href="#contact">Kontak</a></li>
-                    <li><a class="nav-link" href="<?= base_url('login-guru'); ?>">Masuk Sebagai Guru</a></li>
+                    <li><a class="nav-link" href="<?= base_url('login'); ?>">Masuk Sebagai Guru</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle d-none"></i>
             </nav><!-- .navbar -->
