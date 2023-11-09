@@ -5,12 +5,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Data Pendaftaran</h1>
+                    <h1 class="m-0">Data Siswa Aktif</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Data Pendaftaran</li>
+                        <li class="breadcrumb-item active">Data Siswa Aktif</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -49,26 +49,28 @@
                                         <th style="width: 15%;">Foto</th>
                                         <th>Nama</th>
                                         <th>Alamat</th>
+                                        <th>Tahun Ajaran</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($pendaftaran as $row) : ?>
+                                    <?php foreach ($aktif as $row) : ?>
                                         <tr>
-                                            <td><?= $row->siswa_id ?></td>
+                                            <td><?= $row->id ?></td>
                                             <td><img src="./uploads/<?= $row->foto ?>" class="w-100"></td>
                                             <td><?= $row->nama_lengkap ?></td>
                                             <td><?= $row->alamat ?></td>
+                                            <td><?= $row->tahun_ajaran ?></td>
                                             <td>
                                                 <div class="btn-group" role="group" aria-label="Basic example">
-                                                    <a class="btn btn-success" href="<?= base_url('terima-siswa/' . str_replace('/', '_', $row->siswa_id)) ?>" onclick="return confirm('Yakin ingin menerima siswa ini?')">Terima</a>
-                                                    <a class="btn btn-danger" href="<?= base_url('tolak-siswa/' . str_replace('/', '_', $row->siswa_id)) ?>" onclick="return confirm('Yakin ingin menolak siswa ini?')">Tolak</a>
-                                                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#detail<?= str_replace('/', '_', $row->siswa_id); ?>">Lihat Detail Siswa</button>
+                                                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#detail<?= str_replace('/', '_', $row->id); ?>">Lihat Detail Siswa</button>
                                                 </div>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>
                                 </tbody>
+                                <!-- Button trigger modal -->
+
                             </table>
                         </div>
                         <!-- /.card-body -->
@@ -82,13 +84,13 @@
 </div>
 <!-- /.content-wrapper -->
 
-<?php foreach ($pendaftaran as $row) : ?>
+<?php foreach ($aktif as $row) : ?>
     <!-- Modal -->
-    <div class="modal fade" id="detail<?= str_replace('/', '_', $row->siswa_id); ?>" tabindex="-1" aria-labelledby="modaldetail<?= str_replace('/', '_', $row->siswa_id); ?>" aria-hidden="true">
+    <div class="modal fade" id="detail<?= str_replace('/', '_', $row->id); ?>" tabindex="-1" aria-labelledby="modaldetail<?= str_replace('/', '_', $row->id); ?>" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modaldetail<?= str_replace('/', '_', $row->siswa_id); ?>">Detail Siswa</h5>
+                    <h5 class="modal-title" id="modaldetail<?= str_replace('/', '_', $row->id); ?>">Detail Siswa</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>

@@ -20,7 +20,7 @@
                          </p>
                      </a>
                  </li>
-                 <li class="nav-item <?= $active == 'data-siswa' || $active == 'data-pendaftaran' || $active == 'data-ditolak' ? 'menu-open' : ''; ?>">
+                 <li class="nav-item <?= $active == 'data-siswa' || $active == 'data-pendaftaran' || $active == 'data-ditolak' || $active == 'data-aktif' ? 'menu-open' : ''; ?>">
                      <a href="#" class="nav-link <?= $active == 'data-siswa' ? 'active' : ''; ?>">
                          <i class="nav-icon fas fa-users"></i>
                          <p>
@@ -42,7 +42,7 @@
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="#" class="nav-link">
+                             <a href="<?= base_url('data-siswa-aktif'); ?>" class="nav-link <?= $active == 'data-aktif' ? 'active' : ''; ?>">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>Data Siswa Aktif / Diterima</p>
                              </a>

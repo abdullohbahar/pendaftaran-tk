@@ -66,3 +66,6 @@ $route['terima-siswa/(:any)'] = 'PendaftaranController/terimaSiswa/$1';
 $route['tolak-siswa/(:any)'] = 'PendaftaranController/tolakSiswa/$1';
 
 $route['data-siswa-ditolak'] = 'SiswaController/siswaDitolak';
+$route['data-siswa-aktif'] = 'SiswaController/siswaAktif';
+
+$route['login'] = 'LoginController/login';

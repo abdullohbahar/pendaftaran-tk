@@ -35,4 +35,21 @@ class SiswaController extends CI_Controller
         $this->load->view('siswa/siswa-ditolak', $data);
         $this->load->view('guru/layout/footer', $data);
     }
+
+    public function siswaAktif()
+    {
+        $this->load->model('M_Siswa');
+        $aktif = $this->M_Siswa->get_siswa_diterima();
+
+        $data = [
+            'active' => 'data-aktif',
+            'aktif' => $aktif,
+        ];
+
+        $this->load->view('guru/layout/header', $data);
+        $this->load->view('guru/layout/navbar', $data);
+        $this->load->view('guru/layout/sidebar', $data);
+        $this->load->view('siswa/siswa-aktif', $data);
+        $this->load->view('guru/layout/footer', $data);
+    }
 }
