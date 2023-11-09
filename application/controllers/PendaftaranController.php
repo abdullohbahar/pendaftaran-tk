@@ -86,6 +86,7 @@ class PendaftaranController extends CI_Controller
                 'status_anak' => $this->input->post('status_anak'),
                 'alamat' => $this->input->post('alamat'),
                 'tahun_ajaran' => $yearNow . '/' . $nextYear,
+                'status_penerimaan' => 'pending'
             );
 
             $config['upload_path'] = './uploads/';
@@ -114,6 +115,7 @@ class PendaftaranController extends CI_Controller
                 'no_telpon' => $this->input->post('no_telpon'),
                 'penghasilan' => $this->input->post('penghasilan'),
                 'status' => $this->input->post('status'),
+                'siswa_id' => $id
             );
 
             if ($this->M_Siswa->save_siswa($dataSiswa) && $this->M_Wali->save_wali($dataWali)) {
@@ -126,5 +128,48 @@ class PendaftaranController extends CI_Controller
                 $this->load->view('pendaftaran/index');
             }
         }
+    }
+
+    public function dataPendaftaran()
+    {
+        $this->load->model('M_Siswa');
+        $pendaftaran = $this->M_Siswa->get_pendaftaran();
+
+        $data = [
+            'active' => 'data-pendaftaran',
+            'pendaftaran' => $pendaftaran,
+        ];
+
+        $this->load->view('guru/layout/header', $data);
+        $this->load->view('guru/layout/navbar', $data);
+        $this->load->view('guru/layout/sidebar', $data);
+        $this->load->view('pendaftaran/data-pendaftaran', $data);
+        $this->load->view('guru/layout/footer', $data);
+    }
+
+    public function terimaSiswa($id)
+    {
+        $id = str_replace('_', '/', $id);
+
+        $this->load->model('M_Siswa');
+        $this->M_Siswa->terima_siswa($id);
+
+        // Set flash data
+        $this->session->set_flashdata('success', 'Siswa berhasil diterima.');
+
+        redirect('data-pendaftaran');
+    }
+
+    public function tolakSiswa($id)
+    {
+        $id = str_replace('_', '/', $id);
+
+        $this->load->model('M_Siswa');
+        $this->M_Siswa->tolak_siswa($id);
+
+        // Set flash data
+        $this->session->set_flashdata('success', 'Siswa berhasil ditolak.');
+
+        redirect('data-pendaftaran');
     }
 }

@@ -60,3 +60,9 @@ $route['data-guru'] = 'GuruController/dataGuru';
 $route['tambah-guru'] = 'GuruController/tambahGuru';
 $route['hapus-guru/(:any)'] = 'GuruController/hapusGuru/$1';
 $route['ubah-guru/(:any)'] = 'GuruController/ubahGuru/$1';
+
+$route['data-pendaftaran'] = 'PendaftaranController/dataPendaftaran';
+$route['terima-siswa/(:any)'] = 'PendaftaranController/terimaSiswa/$1';
+$route['tolak-siswa/(:any)'] = 'PendaftaranController/tolakSiswa/$1';
+
+$route['data-siswa-ditolak'] = 'SiswaController/siswaDitolak';
