@@ -157,4 +157,20 @@ class GuruController extends CI_Controller
 
         redirect('data-guru');
     }
+
+    public function dataMasukan()
+    {
+        $this->load->model('M_Masukan');
+        $masukan = $this->M_Masukan->get_all_masukan();
+        $data = [
+            'active' => 'masukan',
+            'masukan' => $masukan,
+        ];
+
+        $this->load->view('guru/layout/header', $data);
+        $this->load->view('guru/layout/navbar', $data);
+        $this->load->view('guru/layout/sidebar', $data);
+        $this->load->view('guru/data-masukan/index', $data);
+        $this->load->view('guru/layout/footer', $data);
+    }
 }

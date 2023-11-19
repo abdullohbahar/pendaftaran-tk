@@ -57,6 +57,14 @@
                          </p>
                      </a>
                  </li>
+                 <li class="nav-item">
+                     <a href="<?= base_url('data-masukan'); ?>" class="nav-link <?= $active == 'masukan' ? 'active' : ''; ?>">
+                         <i class="nav-icon fas fa-list"></i>
+                         <p>
+                             Masukan
+                         </p>
+                     </a>
+                 </li>
              </ul>
          </nav>
          <!-- /.sidebar-menu -->

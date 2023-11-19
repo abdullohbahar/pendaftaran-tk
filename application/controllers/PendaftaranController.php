@@ -124,7 +124,7 @@ class PendaftaranController extends CI_Controller
                 $this->load->view('pendaftaran/index');
             } else {
                 // Data save failed
-                $this->session->set_flashdata('failed', 'Data berhasil disimpan.');
+                $this->session->set_flashdata('failed', 'Data gagal disimpan.');
                 $this->load->view('pendaftaran/index');
             }
         }

@@ -65,6 +65,7 @@
                     <li><a class="nav-link scrollto" href="#about">Tentang Kami</a></li>
                     <li><a class="nav-link scrollto" href="#teacher">Guru</a></li>
                     <li><a class="nav-link scrollto" href="#registration">Pendaftaran</a></li>
+                    <li><a class="nav-link scrollto" href="#masukan">Masukan</a></li>
                     <li><a class="nav-link scrollto" href="#contact">Kontak</a></li>
                     <li><a class="nav-link" href="<?= base_url('login'); ?>">Masuk Sebagai Guru</a></li>
                 </ul>
@@ -213,8 +214,53 @@
         </section><!-- End About Section -->
 
 
-        <!-- ======= Contact Section ======= -->
-        <section id="contact" class="contact">
+        <!-- ======= Masukan Section ======= -->
+        <section id="masukan" class="contact">
+            <div class="container">
+
+                <div class="section-header">
+                    <h2>Beri Masukan Ke Kami</h2>
+                    <p>Ea vitae aspernatur deserunt voluptatem impedit deserunt magnam occaecati dssumenda quas ut ad dolores adipisci aliquam.</p>
+                </div>
+
+            </div>
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-12">
+                        <div class="info">
+                            <h3>Masukan</h3>
+                            <div>
+                                <div>
+                                    <?php if ($this->session->flashdata('success')) { ?>
+                                        <div class="alert alert-success">
+                                            <a href="#" class="close" data-dismiss="alert">&times;</a>
+                                            <strong>Berhasil!</strong> <?php echo $this->session->flashdata('success'); ?>
+                                        </div>
+                                    <?php } else if ($this->session->flashdata('error')) { ?>
+                                        <div class="alert alert-success">
+                                            <a href="#" class="close" data-dismiss="alert">&times;</a>
+                                            <strong>Gagal!</strong> <?php echo $this->session->flashdata('error'); ?>
+                                        </div>
+                                    <?php } ?>
+                                    <form action="<?= base_url('kirim-masukan'); ?>" method="POST">
+                                        <textarea name="masukan" class="form-control" style="width: 100%;"></textarea>
+                                        <button type="submit" class="btn btn-info mt-4" style="width: 100%;">Kirim Masukan</button>
+                                    </form>
+                                </div>
+                            </div><!-- End Info Item -->
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- End Masukan Section -->
+
+
+        <section id="contact" class="contact mt-3">
             <div class="container">
 
                 <div class="section-header">

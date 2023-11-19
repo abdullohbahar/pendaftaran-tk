@@ -61,6 +61,8 @@ $route['tambah-guru'] = 'GuruController/tambahGuru';
 $route['hapus-guru/(:any)'] = 'GuruController/hapusGuru/$1';
 $route['ubah-guru/(:any)'] = 'GuruController/ubahGuru/$1';
 
+$route['home'] = 'LandingController';
+
 $route['data-pendaftaran'] = 'PendaftaranController/dataPendaftaran';
 $route['terima-siswa/(:any)'] = 'PendaftaranController/terimaSiswa/$1';
 $route['tolak-siswa/(:any)'] = 'PendaftaranController/tolakSiswa/$1';
@@ -71,3 +73,6 @@ $route['data-siswa-aktif'] = 'SiswaController/siswaAktif';
 $route['login'] = 'LoginController/index';
 $route['aksi-login'] = 'LoginController/proses_login';
 $route['logout'] = 'LoginController/logout';
+
+$route['kirim-masukan'] = 'MasukanController/kirim';
+$route['data-masukan'] = 'GuruController/dataMasukan';
